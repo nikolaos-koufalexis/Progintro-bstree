@@ -137,14 +137,14 @@ int main(){
 	bstree T;
 	int N,M,node,value;
 	
-	//Εισαγωγή Πλήθους Ν ακεραίων προς εισαγωγή στο ΔΔΑ
+	//Insertion of N nodes in BST
 	cin>>N;
 	for(int i=0;i<N;i++){
 		cin>>node;
 		T.insert(root,node);
 	}
 
-	//Εισαγωγή πλήθους Μ ακεραίων προς αναζήτηση στο ΔΔΑ
+	//Insertion of M nodes in BST
 	cin>>M;
 	int level[M],height,a,j=0;
 	string s;
@@ -157,22 +157,22 @@ int main(){
 	a=T.search(value);
 	s+=to_string(a);
 	
-	//1η Γραμμή: Εκτύπωση Ύψους ΔΔΑ
+	//1st Line: Print Height of BST
 	height=T.height(root);
 	cout<<height;
 	cout<<endl;
 	
-	//2η Γραμμή: Εκτύπωση Ελαχίστου και Μεγίστου ακεραίου στο ΔΔΑ
+	//2nd Line: Print Minimum and Maximum value of BST
 	T.min();
 	cout<<" ";
 	T.max();
 	cout<<endl;
 	
-	//3η Γραμμή: Εκτύπωση αποτελεσμάτων αναζητήσεων
+	//3rd Line: Print results of search() function
 	cout<<s;
 	cout<<endl;
 	
-	//4η Γραμμή: Εκτύπωση στοιχείων ΔΔΑ (ενδοδιατεταγμένα,προδιατεταγμένα,μεταδιατεταγμένα)
+	//4rth line: Print BST nodes (inorder,preorder,postorder)
 	T.inorder(root);
 	cout<<"end"<<endl;
 	T.preorder(root);
